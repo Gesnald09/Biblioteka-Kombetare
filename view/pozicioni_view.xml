@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="pozicioni_form_view" model="ir.ui.view">
+            <field name="name">librari.pozicioni.form</field>
+            <field name="model">librari.pozicioni</field>
+            <field name="arch" type="xml">
+                <form string="Pozicioni">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="pozicioni"/>
+                                <field name="pagesa_per_kete_pozicion"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pozicioni_tree_view" model="ir.ui.view">
+            <field name="name">librari.pozicioni.tree</field>
+            <field name="model">librari.pozicioni</field>
+            <field name="arch" type="xml">
+                <tree string="Pozicioni">
+                    <field name="pozicioni"/>
+                    <field name="pagesa_per_kete_pozicion"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pozicioni_search_view" model="ir.ui.view">
+            <field name="name">librari.pozicioni.search</field>
+            <field name="model">librari.pozicioni</field>
+            <field name="arch" type="xml">
+                <search string="ModelTitle">
+                    <field name="pozicioni"/>
+                    <field name="pagesa_per_kete_pozicion"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="pozicioni_act_window" model="ir.actions.act_window">
+            <field name="name">Pozicioni</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">librari.pozicioni</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Shto Pozicion
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Librari" id="Librari_root_menu"/>
+        <menuitem name="Pozicioni" id="pozicioni_menu" parent="librari.librari_root_menu" action="pozicioni_act_window"/>
+
+    </data>
+</odoo>

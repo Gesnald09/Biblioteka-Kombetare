@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="kartela_form_view" model="ir.ui.view">
+            <field name="name">librari.kartela.form</field>
+            <field name="model">librari.kartela</field>
+            <field name="arch" type="xml">
+                <form string="Kartela">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="emri"/>
+                                <field name="mbiemri"/>
+                                <field name="nr_id"/>
+                                <field name="ditelindja"/>
+                                <field name="kategoria"/>
+                            </group>
+                            <group>
+                                <field name="telefoni"/>
+                                <field name="email"/>
+                                <field name="adresa"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="liberiri_page" string="Liber i ri">
+                                <field name="liberiri_ids">
+                                    <tree string="Liber i Ri" editable="bottom">
+                                        <field name="emri_i_librit1"/>
+                                        <field name="data_e_marrjes"/>
+                                        <field name="data_e_kthimit"/>
+                                        <field name="kartela_id"/>
+                                        <field name="kohezgjatja"/>
+                                        <field name="emri_i_punonjesit"/>
+                                        <field name="emri_i_punonjesit"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="kartela_tree_view" model="ir.ui.view">
+            <field name="name">librari.kartela.tree</field>
+            <field name="model">librari.kartela</field>
+            <field name="arch" type="xml">
+                <tree string="Kartela">
+                    <field name="emri"/>
+                    <field name="mbiemri"/>
+                    <field name="nr_id"/>
+                    <field name="ditelindja"/>
+                    <field name="telefoni"/>
+                    <field name="email"/>
+                    <field name="adresa"/>
+                    <field name="kategoria"/>
+                    <field name="liberiri_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="kartela_search_view" model="ir.ui.view">
+            <field name="name">librari.kartela.search</field>
+            <field name="model">librari.kartela</field>
+            <field name="arch" type="xml">
+                <search string="Kartelat">
+                  <field name="emri"/>
+                    <field name="mbiemri"/>
+                    <field name="nr_id"/>
+                    <field name="ditelindja"/>
+                    <field name="telefoni"/>
+                    <field name="email"/>
+                    <field name="adresa"/>
+                    <field name="kategoria"/>
+                    <field name="liberiri_ids"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="kartela_act_window" model="ir.actions.act_window">
+            <field name="name">Kartela</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">librari.kartela</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Krijo kartele te re
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Librari" id="librari_root_menu"/>
+        <menuitem name="Kartelat" id="kartela_menu" parent="librari.librari_root_menu" action="kartela_act_window"/>
+
+    </data>
+</odoo>

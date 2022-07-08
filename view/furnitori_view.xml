@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="furnitori_form_view" model="ir.ui.view">
+            <field name="name">librari.furnitori.form</field>
+            <field name="model">librari.furnitori</field>
+            <field name="arch" type="xml">
+                <form string="Furnitori">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="emri_i_shtepise_botuese"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="furnitori_tree_view" model="ir.ui.view">
+            <field name="name">librari.furnitori.tree</field>
+            <field name="model">librari.furnitori</field>
+            <field name="arch" type="xml">
+                <tree string="Furnitori">
+                    <field name="emri_i_shtepise_botuese"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="furnitori_search_view" model="ir.ui.view">
+            <field name="name">librari.furnitori.search</field>
+            <field name="model">librari.furnitori</field>
+            <field name="arch" type="xml">
+                <search string="Furnitori">
+                    <field name="emri_i_shtepise_botuese"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="furnitori_act_window" model="ir.actions.act_window">
+            <field name="name">ModelTitle</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">librari.furnitori</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Shto Shtepi Botuese
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Librari" id="Librari_root_menu"/>
+        <menuitem name="Furnitori" id="furnitori_menu" parent="librari.librari_root_menu" action="furnitori_act_window"/>
+
+    </data>
+</odoo> 

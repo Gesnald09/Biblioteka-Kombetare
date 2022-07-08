@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="punonjesi_form_view" model="ir.ui.view">
+            <field name="name">librari.punonjesi.form</field>
+            <field name="model">librari.punonjesi</field>
+            <field name="arch" type="xml">
+                <form string="Punonjesi">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="emri_i_punonjesit"/>
+                                <field name="mbiemri_i_punonjesit"/>
+                                <field name="ditelindja"/>
+                                <field name="adresa_e_punonjesit"/>
+                                <field name="numri_i_telefonit"/>
+                                <field name="email_i_punonjesit"/>
+                                <field name="pozicioni"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="punonjesi_tree_view" model="ir.ui.view">
+            <field name="name">librari.punonjesi.tree</field>
+            <field name="model">librari.punonjesi</field>
+            <field name="arch" type="xml">
+                <tree string="Punonjesi">
+                 <field name="emri_i_punonjesit"/>
+                                <field name="mbiemri_i_punonjesit"/>
+                                <field name="ditelindja"/>
+                                <field name="adresa_e_punonjesit"/>
+                                <field name="numri_i_telefonit"/>
+                                <field name="email_i_punonjesit"/>
+                                <field name="pozicioni"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="punonjesi_search_view" model="ir.ui.view">
+            <field name="name">librari.punonjesi.search</field>
+            <field name="model">librari.punonjesi</field>
+            <field name="arch" type="xml">
+                <search string="Punonjesi">
+                    <field name="emri_i_punonjesit"/>
+                                <field name="mbiemri_i_punonjesit"/>
+                                <field name="ditelindja"/>
+                                <field name="adresa_e_punonjesit"/>
+                                <field name="numri_i_telefonit"/>
+                                <field name="email_i_punonjesit"/>
+                                <field name="pozicioni"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="punonjesi_act_window" model="ir.actions.act_window">
+            <field name="name">Punonjesi</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">librari.punonjesi</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Shto punonjes
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Librari" id="Librari_root_menu"/>
+        <menuitem name="Punonjesi" id="punonjesi_menu" parent="librari.librari_root_menu" action="punonjesi_act_window"/>
+
+    </data>
+</odoo>

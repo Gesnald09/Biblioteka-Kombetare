@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="punonjesitemarrdhenievemepublikun_form_view" model="ir.ui.view">
+            <field name="name">librari.punonjesitemarrdhenievemepublikun.form</field>
+            <field name="model">librari.punonjesitemarrdhenievemepublikun</field>
+            <field name="arch" type="xml">
+                <form string="Punonjesit e marrdhenieve me publikun">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="emri_i_punonjesit"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="punonjesitemarrdhenievemepublikun_tree_view" model="ir.ui.view">
+            <field name="name">librari.punonjesitemarrdhenievemepublikun.tree</field>
+            <field name="model">librari.punonjesitemarrdhenievemepublikun</field>
+            <field name="arch" type="xml">
+                <tree string="ModelTitle">
+                    <field name="emri_i_punonjesit"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="punonjesitemarrdhenievemepublikun_search_view" model="ir.ui.view">
+            <field name="name">librari.punonjesitemarrdhenievemepublikun.search</field>
+            <field name="model">librari.punonjesitemarrdhenievemepublikun</field>
+            <field name="arch" type="xml">
+                <search string="Punonjesit e marrdhenieve me publikun">
+                    <field name="emri_i_punonjesit"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="punonjesitemarrdhenievemepublikun_act_window" model="ir.actions.act_window">
+            <field name="name">ModelTitle</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">librari.punonjesitemarrdhenievemepublikun</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Vendosni punonjesit e marrdhenieve me publikun
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Librari" id="Librari_root_menu"/>
+        <menuitem name="Punonjesit e marrdhenieve me publikun" id="punonjesitemarrdhenievemepublikun_menu" parent="librari.librari_root_menu" action="punonjesitemarrdhenievemepublikun_act_window"/>
+
+    </data>
+</odoo>
